@@ -1,8 +1,11 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 /* -------------------------------------- *\
     Reset
 \* -------------------------------------- */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}
-
 
 body{
   background: #ffcc66;
@@ -10,17 +13,182 @@ body{
   font-size: 100%;
   line-height: 100%;
 }
-
+.right{
+  float: right;
+}
+sup{
+  vertical-align: super;
+  font-size: 60%;
+}
 .container{
   max-width: 880px;
   margin: 0 auto;
   border-radius: 10px;
   background: #fff;
   margin-top: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 6px 20px 0px rgba(255, 166, 27, 1);
+}
+h1{
+  font:700 190%/100% 'Open Sans', sans-serif;
+}
+h2{
+  font:normal 160%/100% 'Open Sans', sans-serif;
+  color: #444751;
+}
+aside, main{
+  float:left;
+  padding:52px 52px 0 52px;
+}
+aside{
+  width: 30%;
+  background: #f2f2f2;
+}
+aside:before,
+main:after,
+.clear{
+  clear:both;
+  display: table;
+  content: "";
+}
+aside .add-cc{
+  float: right;
+}
+aside h2{
+  margin-bottom: 59px;
+  display: inline-block;
+}
+.cc{
+  padding: 20px;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #e1e1e1;
+}
+.cc + .cc{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.cc:last-of-type{
+  margin-bottom: 0;
+}
+.active-cc{
+  border: 4px solid #8393ca;
+  border-radius: 3px;
+}
+.cc-number{
+  margin: 20px 0 0;
+  color: #666666;
+  font: normal 115%/100% 'Roboto', sans-serif;
+}
+.cc-number > span{
+  display: inline-block;
+}
+.cc-number .starred{
+  vertical-align: text-bottom;
+  line-height: 10px;
+  letter-spacing: 5px;
+  font-size: 83%;
+  font-weight: bold;
+}
+.cc-number .last4{
+  font-size: 20px;
+}
+.cc-number .valid-dates{
+  margin-top: 20px;
+  color: #b2b2b2;
+  font-size: 80%;
 }
 
-aside{
-  float:left;
-  width: 30%;
-  padding:55px;
+/* Main section */
+main{
+  float:left; 
+  width: 45%;
+  background: #fff;
+}
+.balance{
+  border-bottom: 1px solid #e5e5e5;
+}
+main h1, 
+main h2{
+  display: inline-block;
+  margin-bottom: 59px;
+}
+main .balance-number{
+  float: right;
+  color: #444751;
+}
+
+.balance{
+  margin-bottom: 59px;
+}
+.item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 40px;
+}
+.item:last-of-type{
+  margin-bottom: 0;
+}
+.item > .icon{
+  position: absolute;
+  left:0;
+  top: 50%;
+  margin-top: -10px;
+}
+.item .heading-description{
+  display: inline-block;
+}
+.item .heading-description h4{
+  font: bold 110%/100% 'Open sans', sans-serif;
+  margin-bottom: 10px;
+}
+.item .description{
+  font: normal 85%/100% 'Open sans', sans-serif;
+  color: #999999;
+}
+.item .amount{
+  line-height: 287%;
+  color: #8393ca;
+  font-weight: 600;
+}
+.item > .icon-plus ~ .amount{
+  color: #66cc33;
+}
+
+/* -------------------------------------- *\
+    Icons/Sprites
+\* -------------------------------------- */
+.icon{
+  display: inline-block;
+}
+
+.add-cc{
+  background-image: url(../images/icon-plus-lg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 24px;
+  width: 24px;
+}
+
+.sprite-cc{
+  background-image: url(../images/sprite-cc.png);
+  background-repeat: no-repeat;
+  height: 44px;
+  width: 64px;
+}
+.visa{background-position: top center;}
+.amex{background-position: center center;}
+.mastercard{background-position: bottom center;}
+
+.icon-minus{
+  background: url(../images/icon-minus.png) no-repeat center center;
+  width: 20px;
+  height: 20px;
+}
+.icon-plus{
+  background: url(../images/icon-plus.png) no-repeat center center;
+  width: 20px;
+  height: 20px;
 }
