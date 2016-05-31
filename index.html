@@ -7,11 +7,51 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="">
   <div class="container">
     <aside>
       <h2>My Wallets</h2>
       <a href="#" class="icon add-cc"></a>
+      <!-- Add credit card -->
+      <div class="addCC" aria-hidden="true">
+        <form action="#" class="addCC-form">
+          <h2>Add a credit card</h2>
+          <div>
+            <label for="type">Credit Card Type:</label>
+            <select name="type" id="type" tabindex="1">
+              <option value="Visa" class="sprite-cc visa">Visa</option>
+              <option value="Amex" class="sprite-cc amex">Amex</option>
+              <option value="Mastercard" class="sprite-cc mastercard">Mastercard</option>
+            </select>
+          </div>
+          <div>
+            <label for="number">Credit Card Number</label>
+            <input type="number" name="number" id="number" value="" tabindex="2">
+          </div>
+          <div>
+            <label for="validDate">Valid Thru: </label>
+            <input type="date" name="validDate" id="validDate" tabindex="3">
+          </div>
+          <div class="buttons">
+            <a class="btn btn-reset">Reset</a>
+            <a class="btn btn-submit">Add Card</a>
+            <div class="clear"></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="cc empty-cc">
+        <div class="sprite-cc"></div>
+        <div class="cc-number">
+          <span class="starred"></span>
+          <span class="last4"></span>
+          <div class="valid-dates">
+            Valid Thru: <span></span>
+          </div>
+        </div>
+      </div><!-- end .cc.row.active-cc -->
+
+
       <div class="cc active-cc">
         <div class="sprite-cc visa"></div>
         <div class="cc-number">
@@ -25,8 +65,8 @@
       <div class="cc">
         <div class="sprite-cc amex"></div>
         <div class="cc-number">
-          <span class="starred">**** **** ****</span>
-          <span class="last4">2100</span>
+          <span class="starred">**** ******</span>
+          <span class="last4">21001</span>
           <div class="valid-dates">
             Valid Thru: <span>07/19</span>
           </div>
@@ -131,13 +171,13 @@
 
       </ul>
     </main>
-
-
-
-  <div class="clear"></div>
   </div><!-- end container-->
 
+  <div class="clear"></div>
+  
+  
 
+  <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

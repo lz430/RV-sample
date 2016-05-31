@@ -12,6 +12,11 @@ body{
   font-family: 'Open Sans', sans-serif;
   font-size: 100%;
   line-height: 100%;
+  position: relative;
+}
+body.overlay{
+  opacity: .3;
+  background: #000;
 }
 .right{
   float: right;
@@ -31,7 +36,7 @@ sup{
   box-shadow: 0px 6px 20px 0px rgba(255, 166, 27, 1);
 }
 h1{
-  font:700 190%/100% 'Open Sans', sans-serif;
+  font:700 225%/100% 'Open Sans', sans-serif;
 }
 h2{
   font:normal 160%/100% 'Open Sans', sans-serif;
@@ -44,6 +49,7 @@ aside, main{
 aside{
   width: 30%;
   background: #f2f2f2;
+  padding-bottom: 45px;
 }
 aside:before,
 main:after,
@@ -59,26 +65,31 @@ aside h2{
   margin-bottom: 59px;
   display: inline-block;
 }
-.cc{
-  padding: 20px;
+.cc,
+.addCC{
+  padding: 12px 20px 8px;
   background: #fff;
-  width: 100%;
+  width: 96%;
   box-sizing: border-box;
   border: 2px solid #e1e1e1;
 }
-.cc + .cc{
+.cc:nth-of-type(2){
+  margin-top:0;
+}
+.cc + .cc,
+.addCC{
   margin-top: 40px;
   margin-bottom: 40px;
 }
 .cc:last-of-type{
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 .active-cc{
   border: 4px solid #8393ca;
   border-radius: 3px;
 }
 .cc-number{
-  margin: 20px 0 0;
+  margin: 20px 0 10px;
   color: #666666;
   font: normal 115%/100% 'Roboto', sans-serif;
 }
@@ -88,22 +99,22 @@ aside h2{
 .cc-number .starred{
   vertical-align: text-bottom;
   line-height: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   font-size: 83%;
   font-weight: bold;
 }
 .cc-number .last4{
-  font-size: 20px;
+  font-size: 22px;
 }
 .cc-number .valid-dates{
-  margin-top: 20px;
+  margin: 10px 0 10px;
   color: #b2b2b2;
-  font-size: 80%;
+  font-size: 88%;
 }
 
 /* Main section */
 main{
-  float:left; 
+  float:right; 
   width: 45%;
   background: #fff;
 }
@@ -118,6 +129,7 @@ main h2{
 main .balance-number{
   float: right;
   color: #444751;
+  margin-top: -11px;
 }
 
 .balance{
@@ -158,6 +170,43 @@ main .balance-number{
 }
 
 /* -------------------------------------- *\
+    Add Credit Card
+\* -------------------------------------- */
+.addCC{
+  display: none;
+  margin-top: 0;
+}
+.addCC form{
+  background:#fff;
+  width: 100%;
+}
+.addCC form > h2{
+  margin-bottom: 15px;
+}
+.addCC form > div{
+  margin: 10px 0;
+}
+.addCC form > div label{
+  width: 100%;
+  color: #666;
+  margin-bottom: 3px;
+  display: block;
+}
+.addCC form > div input,
+.addCC form > div select{
+  padding: 3px;
+}
+.addCC form > div input[type=text],
+.addCC form > div input[type=date]{
+  width: 100%;
+}
+.addCC form > div input[type=date]{
+  font-family: 'Roboto', sans-serif;  
+}
+.empty-cc{
+  display: none;
+}
+/* -------------------------------------- *\
     Icons/Sprites
 \* -------------------------------------- */
 .icon{
@@ -191,4 +240,90 @@ main .balance-number{
   background: url(../images/icon-plus.png) no-repeat center center;
   width: 20px;
   height: 20px;
+}
+
+.btn{
+
+}
+.btn-submit {
+  float: right;
+  -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+  background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+  background-color:#33bdef;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #057fd0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+}
+.btn-submit:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+  background-color:#019ad2;
+}
+.btn-submit:active {
+  position:relative;
+  top:1px;
+}
+.btn-reset {
+  float: left;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+  background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+  background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+  background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+  background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+  background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+  background-color:#f9f9f9;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  cursor:pointer;
+  color:#666666;
+  font-family:Arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+}
+.btn-reset:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+  background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+  background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+  background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+  background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+  background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+  background-color:#e9e9e9;
+}
+.btn-reset:active {
+  position:relative;
+  top:1px;
 }
