@@ -84,7 +84,8 @@ aside h2{
 .cc:last-of-type{
   margin-bottom: 10px;
 }
-.active-cc{
+.cc.active-cc{
+  margin-top:0;
   border: 4px solid #8393ca;
   border-radius: 3px;
 }
