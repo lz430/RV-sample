@@ -14,8 +14,9 @@ function submitCC(){
 
     // Appending form data to the placeholder CC
     $('.empty-cc > .sprite-cc').addClass(fields[0].value.toLowerCase());
-    $('.empty-cc .starred');
-    $('.empty-cc .last4').append(fields[1].value);
+    // I'm only appending for Visa and Mastercard numbers. The time didn't allow me to validate for Amex.
+    $('.empty-cc .starred').append(fields[1].value.substr(0,12).replace(/(.{4})/g, '$1 ').replace(/[0-9]/g, "*").trim());
+    $('.empty-cc .last4').append(fields[1].value.substr(12,15));
     $('.empty-cc .valid-dates span').append(fields[2].value);
 
     $(emptyClass).addClass('active-cc').removeClass('empty-cc');
